@@ -40,8 +40,7 @@ func fizz_buzz() {
 		} else if i%5 == 0 {
 			fmt.Println(b)
 		} else {
-			var p string
-			p = strconv.Itoa(i)
+			var p string = strconv.Itoa(i)
 			fmt.Printf("%v, %T\n", p, p)
 		}
 	}
