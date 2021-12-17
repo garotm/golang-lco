@@ -24,6 +24,7 @@ func main() {
 
 func fizz_buzz() {
 
+	// call in a function
 	count := 100
 	b := "buzz"
 	f := "fizz"
