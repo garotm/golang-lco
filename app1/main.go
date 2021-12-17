@@ -14,8 +14,15 @@ func main() {
 	substr := "a"
 	occurance := strings.Count(str, substr)
 	length := len(str)
+
 	fmt.Println("The number of occurrences of the letter:", substr, ", in the string", str, "is: ", occurance)
 	fmt.Println("The length of the string is", length, "characters long.")
+	fmt.Printf("%v, %T", str, str)
+
+	fizz_buzz()
+}
+
+func fizz_buzz() {
 
 	count := 100
 	b := "buzz"
