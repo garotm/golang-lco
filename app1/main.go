@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -20,6 +21,7 @@ func main() {
 	fmt.Printf("%v, %T", str, str)
 
 	fizz_buzz()
+
 }
 
 func fizz_buzz() {
@@ -35,10 +37,12 @@ func fizz_buzz() {
 			fmt.Println(fb)
 		} else if i%3 == 0 {
 			fmt.Println(f)
-		} else if i%2 == 0 {
+		} else if i%5 == 0 {
 			fmt.Println(b)
 		} else {
-			fmt.Println(i)
+			var p string
+			p = strconv.Itoa(i)
+			fmt.Printf("%v, %T\n", p, p)
 		}
 	}
 }
