@@ -20,8 +20,9 @@ func main() {
 	fmt.Println("The length of the string is", length, "characters long.")
 	fmt.Printf("%v, %T", str, str)
 
-	// call in a function
+	// call function(s)
 	fizz_buzz()
+	stringExample()
 
 }
 
@@ -44,4 +45,15 @@ func fizz_buzz() {
 			fmt.Printf("%v, %T\n", p, p)
 		}
 	}
+}
+
+func stringExample() {
+	x := "This is some string of characters."
+	fmt.Printf("%v, %T\n", x, x)
+	a := 3.14
+	b := 3e4
+	c := a + b
+	fmt.Printf("%v, %T\n", a, a)
+	fmt.Printf("%v, %T\n", b, b)
+	fmt.Printf("%v, %T\n", c, c)
 }
