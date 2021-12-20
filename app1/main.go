@@ -23,7 +23,7 @@ func main() {
 	// call function(s)
 	fizz_buzz()
 	stringExample()
-
+	constants()
 }
 
 func fizz_buzz() {
@@ -56,4 +56,14 @@ func stringExample() {
 	fmt.Printf("%v, %T\n", a, a)
 	fmt.Printf("%v, %T\n", b, b)
 	fmt.Printf("%v, %T\n", c, c)
+}
+
+func constants() {
+	Result := 3.145678234
+	myNotConst := Result
+	const a float32 = 3.1423
+	adding := a + float32(myNotConst)
+	fmt.Printf("%v, %T\n", myNotConst, myNotConst)
+	fmt.Printf("%v, %T\n", a, a)
+	fmt.Printf("%v, %T\n", adding, adding)
 }
