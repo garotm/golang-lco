@@ -20,13 +20,13 @@ func main() {
 	fmt.Println("The length of the string is", length, "characters long.")
 	fmt.Printf("%v, %T", str, str)
 
+	// call in a function
 	fizz_buzz()
 
 }
 
 func fizz_buzz() {
 
-	// call in a function
 	count := 100
 	b := "buzz"
 	f := "fizz"
