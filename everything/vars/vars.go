@@ -1,4 +1,4 @@
-package vars
+package main
 
 import (
 	"fmt"
@@ -7,6 +7,11 @@ import (
 const LoginToken string = "askdjfhkuyer/fhaerij" // Public/Global variable
 
 func main() {
+	fmt.Println("Welcome to vars.")
+	vars()
+}
+
+func vars() {
 	var username string = "Garot"
 	fmt.Println(username)
 	fmt.Printf("Variable %v is of type: %T \n", username, username)

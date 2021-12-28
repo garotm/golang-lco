@@ -1,10 +1,10 @@
-package ifelse
+package main
 
 import (
 	"fmt"
 )
 
-func ifelse() {
+func main() {
 	welcome_ifelse := "Welcome to my if else instruction."
 	fmt.Println(welcome_ifelse)
 
