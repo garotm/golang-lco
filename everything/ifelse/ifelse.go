@@ -24,4 +24,18 @@ func main() {
 			fmt.Println(count[i], r)
 		}
 	}
+
+	a := 9
+	if a%2 == 0 {
+		fmt.Println(a, "is even")
+	} else {
+		fmt.Println(a, "is odd")
+	}
+
+	if num := 3; num < 10 {
+		fmt.Println(num, "is less than 10")
+	} else {
+		fmt.Println(num, "is greater than 10")
+	}
+
 }
