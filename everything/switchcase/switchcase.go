@@ -24,7 +24,7 @@ func main() {
 	case 2:
 		fmt.Println("Dice value is", DiceNumber, "you can move", DiceNumber, "spots.")
 	case 3:
-		fmt.Println("Dice value is", DiceNumber, "you can move", DiceNumber, "spots.")
+		fmt.Printf("Dice value is %v you can move %v spots.", DiceNumber, DiceNumber) // just to see it printed in a different way
 		fallthrough
 	case 4:
 		fmt.Println("Dice value is", DiceNumber, "you can move", DiceNumber, "spots.")
