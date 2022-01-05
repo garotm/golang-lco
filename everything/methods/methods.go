@@ -49,5 +49,4 @@ func (u User) yourName() {
 	fmt.Println("And my system name is", u.SystemName)
 	u.SystemName = "something else" // change the system name
 	fmt.Println("And now my system name is", u.SystemName)
-
 }
