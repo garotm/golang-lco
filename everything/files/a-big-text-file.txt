@@ -1,0 +1,12 @@
+This is going to be a larger text file just to see what this looks like
+when it's placed into the mix here. 
+
+I have no idea what this will end up doing when I call it from the program but that is
+the point entirely... 
+
+I think I am getting the hag of this GOlang thing but I have only been doing very basic
+things here thus far.
+
+The next chapters that I am about to embark upon get much more into the practical use of this
+language for real world scenarios, so we'll see how things go as we get past the 'basics' and
+get into the 'meat' of what can be done with this language.

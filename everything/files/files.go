@@ -27,6 +27,13 @@ func main() {
 	fmt.Println("size is: ", size)
 	defer anotherFile.Close()
 	readFile("./another-lco-file.txt")
+
+	/* use this function for a file that already exists
+	   like that which one might find on an operating system
+	   rather than creating one on the fly this assumes what
+	   you are calling already exists.
+	*/
+	aBigTextFile("./a-big-text-file.txt")
 }
 
 func readFile(fileName string) {
@@ -40,4 +47,10 @@ func checkNilErr(err error) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func aBigTextFile(aBigTextFile string) {
+	databyte, err := ioutil.ReadFile(aBigTextFile)
+	checkNilErr(err)
+	fmt.Println("The contents of the file are:\n", string(databyte))
 }
