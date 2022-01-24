@@ -50,7 +50,7 @@ func checkNilErr(err error) {
 }
 
 func aBigTextFile(aBigTextFile string) {
-	databyte, err := ioutil.ReadFile(aBigTextFile)
+	somethingElse, err := ioutil.ReadFile(aBigTextFile)
 	checkNilErr(err)
-	fmt.Println("The contents of the file are:\n", string(databyte))
+	fmt.Println("The contents of the file are:\n", string(somethingElse))
 }
