@@ -60,8 +60,8 @@ func main() {
 	}
 
 	fmt.Printf("This is what we have booked:\n")
-	for i, booked := range bookings {
-		fmt.Printf("\t%v: %v\n", i, booked)
+	for index, booked := range bookings {
+		fmt.Printf("\t%v: %v\n", index, booked)
 	}
 }
 
