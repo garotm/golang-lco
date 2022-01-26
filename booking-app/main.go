@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -9,46 +10,59 @@ const conferenceTickets int = 50
 
 var conferenceName = "Go Conference"
 var remainingTickets uint = 50
+var bookings []string
 
 func main() {
 
 	greetUsers()
 
-	var firstName string
-	var lastName string
-	var email string
-	var userTickets uint
-	var bookings []string
+	for {
 
-	/*
-		var bookings = []string{}
-		bookings := []string{}
-	*/
+		var firstName string
+		var lastName string
+		var email string
+		var userTickets uint
 
-	fmt.Printf("Enter your first name: ")
-	fmt.Scan(&firstName)
+		/*
+			var bookings = []string{}
+			bookings := []string{}
+		*/
 
-	fmt.Printf("Enter your last name: ")
-	fmt.Scan(&lastName)
+		fmt.Printf("Enter your first name: ")
+		fmt.Scan(&firstName)
 
-	fmt.Printf("Enter your email address: ")
-	fmt.Scan(&email)
+		fmt.Printf("Enter your last name: ")
+		fmt.Scan(&lastName)
 
-	fmt.Printf("Enter number of tickets: ")
-	fmt.Scan(&userTickets)
+		fmt.Printf("Enter your email address: ")
+		fmt.Scan(&email)
 
-	remainingTickets = remainingTickets - userTickets
-	bookings = append(bookings, firstName+" "+lastName)
+		fmt.Printf("Enter number of tickets: ")
+		fmt.Scan(&userTickets)
 
-	/*
-		fmt.Printf("The whole slice is: %v\n", bookings)
-		fmt.Printf("The first value in the slice is: %v\n", bookings[0])
-		fmt.Printf("The slice type is: %T\n", bookings)
-		fmt.Printf("The slice length is: %v\n", len(bookings))
-	*/
+		remainingTickets = remainingTickets - userTickets
+		bookings = append(bookings, firstName+" "+lastName+" "+email+" "+strconv.FormatUint(uint64(userTickets), 10))
 
-	fmt.Printf("\nWe have bookings for %v and %v tickets are booked.\n", strings.Join(bookings, ""), userTickets)
-	fmt.Printf("There are only %v tickets remaining for the %v.\n\n", remainingTickets, conferenceName)
+		/*
+			fmt.Printf("The whole slice is: %v\n", bookings)
+			fmt.Printf("The first value in the slice is: %v\n", bookings[0])
+			fmt.Printf("The slice type is: %T\n", bookings)
+			fmt.Printf("The slice length is: %v\n", len(bookings))
+		*/
+
+		fmt.Printf("\nWe have bookings for %v and %v tickets are booked.\n", strings.Join(bookings, ""), userTickets)
+		fmt.Printf("There are only %v tickets remaining for the %v.\n\n", remainingTickets, conferenceName)
+
+		if remainingTickets == 0 {
+			fmt.Printf("We have no more tickets left :(\n\n")
+			break
+		}
+	}
+
+	fmt.Printf("This is what we have booked:\n")
+	for i, booked := range bookings {
+		fmt.Printf("\t%v: %v\n", i, booked)
+	}
 }
 
 func greetUsers() {
