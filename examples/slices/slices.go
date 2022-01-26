@@ -47,4 +47,31 @@ func main() {
 	fmt.Println(courses)
 	fmt.Println(len(courses) - index)
 
+	otherSlices()
+}
+
+func otherSlices() {
+
+	var firstOrange = "Florida"
+	var secondOrange = "California"
+	var thirdOrange = "South Carolina"
+	var forthOrange = "Hawaii"
+
+	//oranges := []string{}
+	oranges := []string{firstOrange, secondOrange, thirdOrange, forthOrange}
+
+	//oranges = append(oranges, firstOrange+" "+secondOrange)
+	//oranges = append(oranges, thirdOrange+" "+forthOrange)
+
+	fmt.Println("This is where the oranges are grown:")
+
+	for i, fruits := range oranges {
+		fmt.Printf("\t%v: %v\n", i, fruits)
+	}
+
+	for _, location := range oranges {
+		fmt.Printf("\t%v\n", location)
+	}
+
+	fmt.Printf("\nThis is what we have in the whole slice ==> %v\n", oranges)
 }

@@ -1,48 +1,62 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
+const conferenceTickets int = 50
+
+var conferenceName = "Go Conference"
+var remainingTickets uint = 50
 
 func main() {
 
-	var conferenceName string = "Go Conference"
-	welcome := fmt.Sprintf("Welcome to the %v booking app!", conferenceName)
-	const conferenceTickets = 50 // we don't want this to change or be negative
-	var remainingTickets uint = 50
-	var merchCount uint = 10
-	var numberOfTickets uint
-
-	fmt.Printf("conferenceTickets is of type %T\nremainingTickets is of type %T\nconferenceName is of type %T\n\n", conferenceTickets, remainingTickets, conferenceName)
-
-	fmt.Println(welcome)
-	fmt.Printf("\nWe have a total of %v tickets and %v are still available\n", conferenceTickets, remainingTickets)
-	fmt.Printf("We also have %v merch items left\n\n", merchCount)
-
-	getInput(numberOfTickets, conferenceTickets, remainingTickets)
-
-}
-
-func getInput(numberOfTickets, conferenceTickets, remainingTickets uint) {
+	greetUsers()
 
 	var firstName string
 	var lastName string
 	var email string
-	prefix := "Please enter"
+	var userTickets uint
+	var bookings []string
 
-	fmt.Println(prefix, "your first name: ")
-	fmt.Scan(&firstName) // the '&' is a pointer
+	/*
+		var bookings = []string{}
+		bookings := []string{}
+	*/
 
-	fmt.Println(prefix, "your last name: ")
+	fmt.Printf("Enter your first name: ")
+	fmt.Scan(&firstName)
+
+	fmt.Printf("Enter your last name: ")
 	fmt.Scan(&lastName)
 
-	fmt.Println(prefix, "your email address: ")
+	fmt.Printf("Enter your email address: ")
 	fmt.Scan(&email)
 
-	fmt.Println(prefix, "the number of tickets you'd like to purchase today: ")
-	fmt.Scan(&numberOfTickets)
+	fmt.Printf("Enter number of tickets: ")
+	fmt.Scan(&userTickets)
 
-	fmt.Printf("Thank you %v %v for purchasing %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, numberOfTickets, email)
+	remainingTickets = remainingTickets - userTickets
+	bookings = append(bookings, firstName+" "+lastName)
 
-	// update the number of tickets remaining
-	remainingTickets = conferenceTickets - numberOfTickets
-	fmt.Printf("There are now %v tickets remaining from the original %v we started with\n\n", remainingTickets, conferenceTickets)
+	/*
+		fmt.Printf("The whole slice is: %v\n", bookings)
+		fmt.Printf("The first value in the slice is: %v\n", bookings[0])
+		fmt.Printf("The slice type is: %T\n", bookings)
+		fmt.Printf("The slice length is: %v\n", len(bookings))
+	*/
+
+	fmt.Printf("\nWe have bookings for %v and %v tickets are booked.\n", strings.Join(bookings, ""), userTickets)
+	fmt.Printf("There are only %v tickets remaining for the %v.\n\n", remainingTickets, conferenceName)
+}
+
+func greetUsers() {
+	fmt.Printf("\n\tWelcome to the %v booking application\n", conferenceName)
+	if remainingTickets == 50 {
+		fmt.Printf("\tWe have a total of %v tickets and all %v tickets are still available.\n", conferenceTickets, remainingTickets)
+	} else {
+		fmt.Printf("\tWe have a total of %v ticket and %v tickets are still available.\n", conferenceTickets, remainingTickets)
+	}
+	fmt.Printf("\tGet your tickets here to attend\n\n")
 }
