@@ -6,10 +6,10 @@ import (
 	"time"
 )
 
-const conferenceTickets int = 50
+const conferenceTickets int = 10
 
 var conferenceName = "Go Conference"
-var remainingTickets uint = 50
+var remainingTickets uint = 10
 var bookings = make([]UserData, 0)
 
 type UserData struct {
@@ -79,16 +79,18 @@ func getUserInput() (string, string, string, uint) {
 	var email string
 	var userTickets uint
 
-	fmt.Println("Enter your first name: ")
+	// I preferred Printf here as I like the name on the same line as the prompt
+
+	fmt.Printf("Enter your first name: ")
 	fmt.Scan(&firstName)
 
-	fmt.Println("Enter your last name: ")
+	fmt.Printf("Enter your last name: ")
 	fmt.Scan(&lastName)
 
-	fmt.Println("Enter your email address: ")
+	fmt.Printf("Enter your email address: ")
 	fmt.Scan(&email)
 
-	fmt.Println("Enter number of tickets: ")
+	fmt.Printf("Enter number of tickets: ")
 	fmt.Scan(&userTickets)
 
 	return firstName, lastName, email, userTickets
@@ -112,7 +114,7 @@ func bookTicket(userTickets uint, firstName string, lastName string, email strin
 }
 
 func sendTicket(userTickets uint, firstName string, lastName string, email string) {
-	time.Sleep(50 * time.Second)
+	time.Sleep(10 * time.Second)
 	var ticket = fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
 	fmt.Println("#################")
 	fmt.Printf("Sending ticket:\n %v \nto email address %v\n", ticket, email)
