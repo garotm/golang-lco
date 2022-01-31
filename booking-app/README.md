@@ -7,3 +7,11 @@ YouTube video can be found [here](https://youtu.be/yyUHQIec83I)
 2. run the code
 `go run ..\booking-app\`
 3. CTRL-C to exit the program
+```
+├───booking-app
+│   │       go.mod
+│   │       helper.go
+│   │       inputs.go
+│   │       main.go
+│   │       README.md
+```
