@@ -33,4 +33,8 @@ func main() {
 	for _, a := range myAttrs {
 		fmt.Println(queryParams[a])
 	}
+
+	for _, vals := range queryParams {
+		fmt.Println(vals)
+	}
 }
