@@ -34,7 +34,30 @@ func main() {
 		fmt.Println(queryParams[a])
 	}
 
+	fmt.Println(myurl)
 	for _, vals := range queryParams {
 		fmt.Println(vals)
 	}
+
+	partsOfUrl := &url.URL{
+		Scheme:  "https",
+		Host:    "lco.dev",
+		Path:    "/tutcss",
+		RawPath: "user=garotm",
+	}
+
+	anotherURL := partsOfUrl.String()
+	fmt.Println(anotherURL)
+
+	// just for clarity
+
+	bodyOfURL := &url.URL{
+		Scheme:  "https",
+		Host:    "linktr.ee",
+		Path:    "/lofibabyrecords",
+		RawPath: "user-garotm",
+	}
+
+	linktreeURL := bodyOfURL.String()
+	fmt.Println(linktreeURL)
 }
